@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Input } from 'antd';
-import styles from './todo.module.css'
+import styles from './todo.scss'
 
 
 export default class Home extends React.Component {
