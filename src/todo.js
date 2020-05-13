@@ -3,19 +3,21 @@ import { Button, Input, Row, Col, Modal, message } from "antd"
 import { ExclamationCircleOutlined } from "@ant-design/icons"
 import styles from "./todo.scss"
 
+
+//react中有两种组件，无状态函数组件，有状态类组件
 //修改弹框组件
 class DialogCustom extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { inputText: '' }
+        this.state = { inputText: "" }
     }
     setInputText = (val) => {
         this.setState({
-            inputText:val
+            inputText: val,
         })
     }
     handleOk = () => {
-        if(!this.state.inputText){
+        if (!this.state.inputText) {
             message.warning("不能为空", 2)
             return
         }
@@ -31,7 +33,7 @@ class DialogCustom extends React.Component {
     onChange = (e) => {
         this.setState({ inputText: e.target.value })
     }
-    //修改父组件todos数据
+    //修改父组件(TodoList)todos数据
     back = () => {
         this.props.changeDialogCustomData(this.state.inputText)
     }
@@ -61,7 +63,7 @@ class TodoList extends React.Component {
             visible: false,
             text: "",
             index: 0,
-            showText:''
+            showText: "",
         }
     }
     componentDidMount() {
@@ -84,16 +86,13 @@ class TodoList extends React.Component {
         })
     }
     add = (e) => {
-        console.log(2, e)
-        console.log(3, this.state.todos)
         this.state.todos.push(e)
-        console.log(5)
         this.setState({
             todos: this.state.todos,
         })
     }
     handleEdit = (index) => {
-        console.log('测试',index,this.state.todos[index])
+        //父组件更改子组件(DialogCustom)数据
         this.refs.getSwordButton.setInputText(this.state.todos[index])
         this.setState({
             visible: true,
@@ -109,14 +108,13 @@ class TodoList extends React.Component {
     }
 
     showDialog = () => {
-        this.setState({ visible: true})
+        this.setState({ visible: true })
     }
 
     handleClose = () => {
         this.setState({ visible: false })
     }
     DialogCustomChange = (e) => {
-        console.log("回传数据", e)
         this.state.todos.splice(this.state.index, 1, e)
         this.setState({
             todos: this.state.todos,
