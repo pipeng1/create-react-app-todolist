@@ -1,12 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Router from './router';
-import './index.css';
+import { Layout } from 'antd';
 
+
+import './index.css';
 import * as serviceWorker from './serviceWorker';
 
+const { Header, Footer, Content } = Layout;
+
+
 ReactDOM.render(
-    <Router/>,
+    <div>
+        <Layout style={{ minHeight: '100vh' }}>
+        <Header style={{ backgroundColor: '#fff' }}>武汉诗礼乐信息科技有限公司</Header>
+        <Content style={{ padding: '20px 200px' }}>
+            <Router />
+        </Content>
+        <Footer><h1 style={{ paddingLeft: '80%' }}>design ©2020 by peter</h1></Footer>
+        </Layout>
+    </div>,
   document.getElementById('root')
 );
 
