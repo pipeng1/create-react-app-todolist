@@ -6,6 +6,7 @@ export default class Home extends React.Component {
         return (
             <div>
                 <a href='#/'> 回到todo </a>
+                <div>行有不得，反求诸己</div>
             </div>
         )
     }
