@@ -1,7 +1,7 @@
 import React from "react"
 import { Button, Input, Row, Col, Modal, message } from "antd"
 import { ExclamationCircleOutlined } from "@ant-design/icons"
-import styles from "./todo.scss"
+import styles from "./todo"
 
 
 //react中有两种组件，无状态函数组件，有状态类组件
