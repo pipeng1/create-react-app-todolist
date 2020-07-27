@@ -13,7 +13,7 @@ const { Header, Footer, Content } = Layout;
 ReactDOM.render(
     <div>
         <Layout style={{ minHeight: '100vh' }}>
-        <Header style={{ backgroundColor: '#fff' }}>武汉诗礼乐信息科技有限公司  -----修改+1</Header>
+        <Header style={{ backgroundColor: '#fff' }}>武汉诗礼乐信息科技有限公司  -----修改+2</Header>
         <Content style={{ padding: '20px 200px' }}>
             <Router />
         </Content>
